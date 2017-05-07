@@ -10,5 +10,5 @@ struct Genome
 {
 	T data[size];
 	size_t length = size;
-	int32_t fitness;
+	int64_t fitness;
 };

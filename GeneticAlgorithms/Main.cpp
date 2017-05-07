@@ -20,25 +20,41 @@ int main(int argc, char** argv)
 	// TEST: END
 
 	Genome<int, 4> genome;
-	Population<Genome<int, 4>, 100> int_population;
+	Population<Genome<int, 4>, 10000> int_population;
 
-	std::function<int(Genome<int, 4>)> fitness = [](Genome<int, 4>& genom)
+	std::function<int(Genome<int, 4>)> fitness = [&](Genome<int, 4>& genom)
 	{
 		if (genom.data[2] < genom.data[3])
 		{
-			genom.fitness = INT_MIN;
+			return genom.fitness = INT_MAX;
 		}
 		else
 		{
-			
+			int left_side = (3 * (genom.data[0] * genom.data[0])) + (5 * (genom.data[1] * genom.data[1] * genom.data[1]));
+			int right_side = (7 * genom.data[2]) + (3 * (genom.data[3] * genom.data[3]));
+			genom.fitness = left_side - right_side;
+
+			genom.fitness < 0 ? genom.fitness *= -1 : (void)0;
+
+			return genom.fitness;
 		}
 	};
 
-	evo::InitPopulation<Population<Genome<int, 4>, 100>, int(Genome<int, 4>)>(int_population, -500, 500, fitness);
+	evo::InitPopulation<Population<Genome<int, 4>, 10000>, int(Genome<int, 4>)>(int_population, -500, 500, fitness);
 
-	for(size_t i = 0; i < int_population.size; i++)
+	const int max_iteration = 10000;
+
+	for (size_t it = 0; it < max_iteration; it++)
 	{
-		int_population.genoms[i].fitness = fitness(int_population.genoms[i]);
+		Genome<int, 4>* solution = evo::OnePlusOne<Population<Genome<int, 4>, 10000>, Genome<int, 4>, int(Genome<int, 4>)>
+									(int_population, fitness);
+
+		if (solution != nullptr)
+		{
+			printf("Solution found after %llu iterations! \n", it);
+			printf("Solution is <( %d , %d , %d , %d )>\n", solution->data[0], solution->data[1], solution->data[2], solution->data[3]);
+			break;
+		}
 	}
 
 	return 0;
