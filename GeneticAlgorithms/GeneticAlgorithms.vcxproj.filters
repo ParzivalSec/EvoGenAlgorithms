@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Evolutionary_Algos">
+      <UniqueIdentifier>{8a19f51b-94e2-4810-9964-d190ae5eae94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Genetic_Algos">
+      <UniqueIdentifier>{f9f93014-d7e6-41a3-acdd-5a09a86a7b01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="General">
+      <UniqueIdentifier>{0cb7102b-62ac-4707-a182-7bc5df973157}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Random">
+      <UniqueIdentifier>{1ffe3574-efba-441e-b4b5-63d60f90a334}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Timer">
+      <UniqueIdentifier>{9d1690f5-d65e-4ea3-93ad-491970049ed4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cmdline-parser">
+      <UniqueIdentifier>{d91e2509-a9e1-49af-911b-e45706685314}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Timer.cpp">
+      <Filter>Timer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Genome.h">
+      <Filter>General</Filter>
+    </ClInclude>
+    <ClInclude Include="Population.h">
+      <Filter>General</Filter>
+    </ClInclude>
+    <ClInclude Include="XORShift.h">
+      <Filter>Random</Filter>
+    </ClInclude>
+    <ClInclude Include="EvolutionStrategies.h">
+      <Filter>Evolutionary_Algos</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdline.h">
+      <Filter>cmdline-parser</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
