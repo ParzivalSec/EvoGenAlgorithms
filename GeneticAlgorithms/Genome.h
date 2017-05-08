@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _GENOM_H_
+#define _GENOM_H_
+#include <cstdint>
 
 /**
  * Generic genome POD
@@ -12,3 +14,5 @@ struct Genome
 	size_t length = size;
 	int64_t fitness;
 };
+
+#endif

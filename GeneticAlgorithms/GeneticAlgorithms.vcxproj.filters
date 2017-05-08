@@ -25,6 +25,12 @@
     <ClCompile Include="Timer.cpp">
       <Filter>Timer</Filter>
     </ClCompile>
+    <ClCompile Include="Solver.cpp">
+      <Filter>Evolutionary_Algos</Filter>
+    </ClCompile>
+    <ClCompile Include="QueensSolverDynamic.cpp">
+      <Filter>Genetic_Algos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Genome.h">
@@ -44,6 +50,15 @@
     </ClInclude>
     <ClInclude Include="cmdline.h">
       <Filter>cmdline-parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Solver.h">
+      <Filter>Evolutionary_Algos</Filter>
+    </ClInclude>
+    <ClInclude Include="QueensSolverTemplated.h">
+      <Filter>Genetic_Algos</Filter>
+    </ClInclude>
+    <ClInclude Include="QueensSolverDynamic.h">
+      <Filter>Genetic_Algos</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
